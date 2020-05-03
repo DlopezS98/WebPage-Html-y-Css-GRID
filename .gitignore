@@ -1,0 +1,9 @@
+#ignorando los estilos de boostrap
+*.css
+*.map
+
+#excepto nuestros propios estilos
+!Style.css
+
+#Carpeta js que no se utiliza...
+js

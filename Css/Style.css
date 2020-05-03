@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: #E9ECF4;
+    color: #000;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "header        header      header"
+                         "banner        banner      banner"
+                         "contenido     contenido   sidebar"
+                         "widget-1      widget-2    sidebar"
+                         "footer        footer      footer";
+}
+
+.contenedor > article,
+.contenedor .header,
+.contenedor .sidebar,
+.contenedor .footer,
+.contenedor .banner,
+.contenedor .contenido{ 
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+.contenedor .header{
+    background: #12203E;
+    color: #fff;
+    grid-area: header;
+}
+
+.contenedor .header ul{
+    float: right;
+}
+
+.contenedor .header ul li{
+    float: left;
+    margin: 10px auto;
+    list-style: none;
+}
+
+.contenedor .header ul li a{
+    color:#fff;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+.contenedor .header ul li a:hover{
+    /*background-color: #55a8fd;*/
+    background: #FAA43D;
+    color: #000;
+}
+
+.contenedor .banner{
+    color: #fff;
+    background-color:dodgerblue;
+    min-height: 300px;
+    grid-area: banner;
+    background-image: url(../Img/Style.css\ -\ Web\ GRID\ CSS\ -\ Visual\ Studio\ Code\ 28_4_2020\ 21_21_25.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .contenido{
+    grid-area: contenido;
+}
+
+.contenedor .contenido h2{
+    text-align: center;
+}
+
+.contenedor .contenido .img{
+    padding: 20px;
+    margin: 20px;
+    float: left;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #12203e;
+}
+
+#text-content{
+    text-align: justify;
+}
+
+#text-content::first-letter{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contenedor .sidebar{
+    grid-area: sidebar;
+    background-color: #FAA43D;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    min-height: 100px;
+}
+
+.contenedor .sidebar h3{
+    text-align: center;
+}
+
+.contenedor .sidebar .imgsidebar{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #E9ECF4;
+    overflow: hidden;
+    margin: 50px auto;
+}
+
+.contenedor .sidebar .imgsidebar img{
+    width: 100%;
+}
+
+#text-sidebar{
+    text-align: center;
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2{
+    background-color: dodgerblue;
+    color: #fff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .widget-1{
+    grid-area: widget-1;
+}
+
+.contenedor .widget-2{
+    grid-area: widget-2;
+}
+
+.contenedor .footer{
+    grid-area: footer;
+    background-color: #12203E;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px){
+    .contenedor{
+        grid-template-areas: "header        header      header"
+                             "banner        banner      banner"
+                             "contenido     contenido   contenido"
+                             "sidebar       sidebar     sidebar"
+                             "widget-1      widget-1    widget-2"
+                             "footer        footer      footer";
+    }
+}
